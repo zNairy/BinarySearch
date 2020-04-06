@@ -11,21 +11,21 @@ class BinarySearch(object):
     def __init__(self, arr, target):
         self.arr = arr
         self.target = target
-        self.r = 0
-        self.l = len(self.arr) - 1
-        self.result = ''
+        self.left_pointer = 0
+        self.right_pointer   = len(self.arr) - 1
+        self.result = None
 
     def search(self):
         while True is not False:
-            self.result = int((self.r + self.l) / 2)
+            self.result = int((self.left_pointer + self.right_pointer) / 2)
             if(self.arr[self.result] == self.target):
                 print(f'Target {self.target} encontrado na posição {self.result}')
                 break
             else:
                 if(self.arr[self.result] > self.target):
-                    self.l = self.result
+                    self.right_pointer = self.result
                 else:
-                    self.r = self.result
+                    self.left_pointer = self.result
     
     def main(self):
         if(self.target in self.arr):
@@ -38,7 +38,7 @@ class BinarySearch(object):
 
 
 def main():
-    bs = BinarySearch([0,1,2,3,4,5,6,7,8,9,10], 4) #your array
+    bs = BinarySearch([1,2,3,4,5,6,7,8,9,10], 4) #your array
     bs.main()
 
 if __name__ == '__main__':

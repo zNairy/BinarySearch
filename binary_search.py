@@ -12,7 +12,7 @@ class BinarySearch(object):
         self.arr = arr
         self.target = target
         self.left_pointer = 0
-        self.right_pointer   = len(self.arr) - 1
+        self.right_pointer = len(self.arr) - 1
         self.result = None
 
     def search(self):
